@@ -10,7 +10,7 @@ public class Movement : MonoBehaviour
 
     //[SerializeField] private Color color;
 
-    private Rigidbody rb;
+    Rigidbody rb;
     //private Renderer renderer;
 
     private float inputHorizontal;
@@ -41,10 +41,12 @@ public class Movement : MonoBehaviour
 
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
         }
+
+        rb.velocity = new Vector3(inputHorizontal * speed * Time.fixedDeltaTime, rb.velocity.y, inputVertical * speed * Time.fixedDeltaTime);
     }
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector3(inputHorizontal * speed * Time.fixedDeltaTime, rb.velocity.y, inputVertical * speed * Time.fixedDeltaTime);
+        //rb.velocity = new Vector3(inputHorizontal * speed * Time.fixedDeltaTime, rb.velocity.y, inputVertical * speed * Time.fixedDeltaTime);
     }
 }
