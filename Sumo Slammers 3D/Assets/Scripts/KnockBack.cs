@@ -4,35 +4,38 @@ using UnityEngine;
 
 public class KnockBack : MonoBehaviour
 {
+    bool inCollider = false;
     Rigidbody _otherRb;
 
     Vector3 _direction;
 
     public float _knockBackForce = 20;
 
-    public void Update()
+    void OnTriggerEnter(Collider other)
     {
-        if(Input.GetMouseButtonDown(0))
-        {
-            //OnTriggerEnter
-        }
+        inCollider = true;
     }
 
     void OnTriggerStay(Collider other)
     {
-        if (Input.GetMouseButtonDown(0))
+
+        if (other.attachedRigidbody)
         {
-            if (other.attachedRigidbody)
+            _otherRb = other.attachedRigidbody;
+            print(other.name);
+            _direction = _otherRb.position - transform.position;
+            _direction.y = 2;
+
+            if (Input.GetMouseButtonDown(0)&& inCollider == true)
             {
-                _otherRb = other.attachedRigidbody;
-                print(other.name);
-                _direction = _otherRb.position - transform.position;
-                _direction.y = 2;
-
                 print(_direction * _knockBackForce * Time.deltaTime);
-
                 _otherRb.AddForce(_direction * _knockBackForce * Time.deltaTime, ForceMode.Impulse);
             }
         }
+       
+    }
+    void OnTriggerExit(Collider other)
+    {
+        inCollider = false;
     }
 }
