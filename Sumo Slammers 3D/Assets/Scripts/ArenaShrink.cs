@@ -13,35 +13,6 @@ public class ArenaShrink : MonoBehaviour
 
     void Update()
     {
-        this.transform.localScale = Vector3.Lerp(this.transform.localScale, new Vector3(-50, 0, -50), Time.deltaTime * shrinkSpeed);
+        this.transform.localScale = Vector3.Lerp(this.transform.localScale, new Vector3(-50, -50, 0), Time.deltaTime * shrinkSpeed);
     }
-
-    /*
-    private void OnTriggerExit(Collider other)
-    {
-        Debug.Log("Triggered");
-        // Destroy a player that leaves the arena
-        if (other.tag == "Player")
-        {
-            Destroy(other.gameObject);
-
-            text.enabled = true;
-            if (other.name == "Player1")
-            {
-                text.text = "Player 2 Wins!";
-            }
-            if (other.name == "Player2")
-            {
-                text.text = "Player 1 Wins!";
-            }
-            StartCoroutine(EndGame());
-        }
-    }
-
-    private IEnumerator EndGame()
-    {
-        yield return new WaitForSeconds(5);
-        SceneManager.LoadScene("Win Screen");
-    }
-    */
 }
