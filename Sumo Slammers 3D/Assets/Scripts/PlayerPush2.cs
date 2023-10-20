@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerPush : MonoBehaviour
+public class PlayerPush2 : MonoBehaviour
 {
     //[SerializeField] private string inputPushButton;
 
     private float PushButton;
 
     public float pushForce = 10f; // Adjust this value to control the strength of the push.
-    
+
 
     void Update()
     {
@@ -18,9 +18,9 @@ public class PlayerPush : MonoBehaviour
 
     void OnCollisionStay(Collision collision)
     {
-        Rigidbody otherRB = collision.gameObject.GetComponent<Rigidbody>();
+        Rigidbody otherRB1 = collision.gameObject.GetComponent<Rigidbody>();
 
-        if (otherRB != null && Input.GetButton("Fire1"))
+        if (otherRB1 != null && Input.GetButton("Fire2"))
         {
             // Calculate the direction from this object to the other object.
             Vector3 direction = collision.transform.position - transform.position;
@@ -29,8 +29,7 @@ public class PlayerPush : MonoBehaviour
             direction.Normalize();
 
             // Apply the force in the opposite direction to push the other object.
-            otherRB.AddForce(direction * pushForce, ForceMode.Impulse);
+            otherRB1.AddForce(direction * pushForce, ForceMode.Impulse);
         }
     }
 }
-
