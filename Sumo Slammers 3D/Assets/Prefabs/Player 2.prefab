@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3869857313825513615}
   - component: {fileID: 3869857313825513610}
   - component: {fileID: 3869857313825513609}
-  - component: {fileID: 3869857313825513616}
+  - component: {fileID: 7839313383212300977}
   m_Layer: 0
   m_Name: Player 2
   m_TagString: Player2
@@ -147,7 +147,7 @@ MonoBehaviour:
   inputNameHorizontal: Horizontal 2
   inputNameVertical: Vertical 2
   rotationSpeed: 500
---- !u!114 &3869857313825513616
+--- !u!114 &7839313383212300977
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -156,7 +156,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3869857313825513608}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ac5b83a70065c142ab7ced6315e277a, type: 3}
+  m_Script: {fileID: 11500000, guid: 504d79e109598934e993a7b3008c1787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pushForce: 100

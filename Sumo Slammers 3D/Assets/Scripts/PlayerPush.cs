@@ -8,7 +8,7 @@ public class PlayerPush : MonoBehaviour
 
     private float PushButton;
 
-    public float pushForce = 10f; // Adjust this value to control the strength of the push.
+    public float pushForce = 10f;
     
 
     void Update()
@@ -20,15 +20,12 @@ public class PlayerPush : MonoBehaviour
     {
         Rigidbody otherRB = collision.gameObject.GetComponent<Rigidbody>();
 
-        if (otherRB != null && Input.GetButton("Fire1"))
+        if (otherRB != null && Input.GetButton("Fire1Xbox"))
         {
-            // Calculate the direction from this object to the other object.
             Vector3 direction = collision.transform.position - transform.position;
 
-            // Normalize the direction vector to ensure it only has a magnitude of 1.
             direction.Normalize();
 
-            // Apply the force in the opposite direction to push the other object.
             otherRB.AddForce(direction * pushForce, ForceMode.Impulse);
         }
     }
