@@ -4,33 +4,15 @@ using UnityEngine;
 
 public class PlayerCharge : MonoBehaviour
 {
-    /*
-    public Rigidbody rb;
-
-    public float ChargeSpeed = 10f;
-
-    private void Update()
-    {
-        //Debug.Log("Tf is happening to VS Code");
-
-        if(Input.GetKeyDown("space"))
-        {
-            Debug.Log("Should Work");
-
-            Vector3 chargeDirection = transform.forward;
-
-            chargeDirection.Normalize();
-
-            rb.AddForce(chargeDirection * ChargeSpeed, ForceMode.Impulse);
-        }
-    }
-    */
     public Rigidbody rb;
     
     public float chargeSpeed = 10f;
     public float chargeDuration = 1.0f;
+
+    public float bounceForce = 10f;
     
     private bool isCharging = false;
+    private bool hitTarget = false;
     
     private Vector3 chargeDirection;
 
@@ -38,9 +20,11 @@ public class PlayerCharge : MonoBehaviour
     {
         if (Input.GetKeyDown("space") && !isCharging)
         {
-            //Debug.Log("Charging...");
+            //Debug.Log("Charging");
             chargeDirection = transform.forward;
             StartCoroutine(Charge());
+
+            hitTarget = true;
         }
     }
 
@@ -61,5 +45,19 @@ public class PlayerCharge : MonoBehaviour
         }
 
         isCharging = false;
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        Rigidbody PushRb = collision.gameObject.GetComponent<Rigidbody>();
+
+        if (PushRb != null && hitTarget == true)
+        {
+            Vector3 direction = collision.transform.position - transform.position;
+
+            direction.Normalize();
+
+            PushRb.AddForce(direction * bounceForce, ForceMode.Impulse);
+        }
     }
 }
