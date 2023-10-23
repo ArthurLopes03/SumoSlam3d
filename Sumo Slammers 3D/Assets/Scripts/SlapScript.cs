@@ -4,39 +4,26 @@ using UnityEngine;
 
 public class SlapScript : MonoBehaviour
 {
-    Movement m;
-    public Rigidbody rb;
-    public float SlapForce = 1f;
-
-    public bool Slap = false;
+    //I changed it up a bit, this script will only activate the slap animation once a certain button is pressed.
+    public bool isSlapping;
+    private Animator animator;
 
     void Start()
     {
-        //rb = m.GetComponent<rb>;
+        animator = GetComponent<Animator>();
     }
 
-
-    void OnTriggerEnter(Collider other)
+    private void Update()
     {
-        if (other.gameObject.tag == "Player2")
+        if (Input.GetMouseButtonDown(0)) 
         {
-            Debug.Log("Enter");
-            Slap = true;
+            Slap();
         }
     }
 
-    void OnTriggerStay(Collider other)
+    public void Slap()
     {
-        if(Slap == true && Input.GetKeyDown("space"))
-        {
-            Debug.Log("Click");
-            rb.AddForce(Vector3.back * SlapForce, ForceMode.Impulse);
-        }
+        if(!isSlapping) 
+            animator.SetTrigger("SlapTrigger");
     }
-
-    void OnTriggerExit(Collider other)
-    {
-
-    }
-
 }
