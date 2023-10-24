@@ -3,7 +3,17 @@ guid: 6c2832ba0c1b64a40b3f5d3bfdadb2b5
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SeatingExp
+    second: {fileID: 2100000, guid: e241a360f0de5b3429e4100427e04a0a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Seating_Body
+    second: {fileID: 2100000, guid: 6482eef14e69f7c40a090f420ef00995, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
