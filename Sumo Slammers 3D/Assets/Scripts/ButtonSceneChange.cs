@@ -7,9 +7,11 @@ using UnityEngine.SceneManagement;
 public class ButtonSceneChange : MonoBehaviour
 {
     public string Scene;
-    
+
     public void loadScene()
     {
+
         SceneManager.LoadScene(Scene);
+
     }
 }

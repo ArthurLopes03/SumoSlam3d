@@ -28,7 +28,7 @@ public class CollisionManager : MonoBehaviour
 
             direction.Normalize();
 
-            otherRB.AddForce(direction * pushForce, ForceMode.Impulse);
+            otherRB.AddForce(direction * pushForce * Time.deltaTime, ForceMode.Impulse);
         }
     }
 }
