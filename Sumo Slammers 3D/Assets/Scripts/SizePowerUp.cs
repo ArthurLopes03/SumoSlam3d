@@ -8,6 +8,20 @@ public class SizePowerUp : MonoBehaviour
     public float duration = 10f;
     //public GameObject pickupEffect;
 
+    void start()
+    {
+        Debug.Log("PowerUp Script Start");
+        GetComponent<MeshRenderer>().enabled = false;
+        GetComponent<Collider>().enabled = false;
+
+        Invoke("Spawn",5);
+    }
+
+    void Spawn()
+    {
+        GetComponent<MeshRenderer>().enabled = true;
+        GetComponent<Collider>().enabled = true;
+    }
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
