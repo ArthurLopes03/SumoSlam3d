@@ -13,6 +13,12 @@ public class ArenaShrink : MonoBehaviour
 
     void Update()
     {
+        StartCoroutine(Shrink());    
+    }
+
+    IEnumerator Shrink()
+    {
+        yield return new WaitForSeconds(20);
         this.transform.localScale = Vector3.Lerp(this.transform.localScale, new Vector3(-50, -50, 0), Time.deltaTime * shrinkSpeed);
     }
 }
