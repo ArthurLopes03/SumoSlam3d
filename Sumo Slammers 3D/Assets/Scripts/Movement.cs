@@ -42,7 +42,7 @@ public class Movement : MonoBehaviour
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
         }
 
-        rb.velocity = new Vector3(-inputHorizontal * speed * Time.fixedDeltaTime, rb.velocity.y, -inputVertical * speed * Time.fixedDeltaTime);
+        rb.AddForce(-inputHorizontal * speed * Time.fixedDeltaTime, rb.velocity.y, -inputVertical * speed * Time.fixedDeltaTime);
 
 
         // Idle and Walking Animations
