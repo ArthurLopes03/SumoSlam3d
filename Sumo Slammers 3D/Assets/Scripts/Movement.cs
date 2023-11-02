@@ -5,7 +5,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     //Speed, input checking and Animtions
-    public static float speed = 200f;
+    public static float speed = 250f;
     [SerializeField] private string inputNameHorizontal;
     [SerializeField] private string inputNameVertical;
     [SerializeField] private string slapName;
@@ -41,6 +41,7 @@ public class Movement : MonoBehaviour
             Quaternion toRotation = Quaternion.LookRotation(movementDirection1, Vector3.up);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
         }
+
 
         rb.AddForce(-inputHorizontal * speed * Time.fixedDeltaTime, rb.velocity.y, -inputVertical * speed * Time.fixedDeltaTime);
 
