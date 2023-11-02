@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17276844, g: 0.21589246, b: 0.2978263, a: 1}
+  m_IndirectSpecularColor: {r: 0.172768, g: 0.21589169, b: 0.29782546, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -249,7 +249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 1797331629}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &678115724
@@ -752,7 +752,7 @@ GameObject:
   - component: {fileID: 1797331634}
   - component: {fileID: 1797331633}
   - component: {fileID: 1797331632}
-  - component: {fileID: 1797331631}
+  - component: {fileID: 1797331635}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -780,18 +780,6 @@ RectTransform:
   m_AnchoredPosition: {x: -2, y: 71}
   m_SizeDelta: {x: 178.2672, y: 76.973}
   m_Pivot: {x: 0.5, y: 0}
---- !u!114 &1797331631
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1797331629}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 512c5e8f87fb51946bab85a082c64542, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1797331632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -836,9 +824,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1797331631}
-        m_TargetAssemblyTypeName: PlayGame, Assembly-CSharp
-        m_MethodName: loadGame
+      - m_Target: {fileID: 1797331635}
+        m_TargetAssemblyTypeName: ButtonSceneChange, Assembly-CSharp
+        m_MethodName: loadScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -886,6 +874,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1797331629}
   m_CullTransparentMesh: 1
+--- !u!114 &1797331635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797331629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6693f616a65161478fa43846a1cb5d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Scene: AssetPlacement
 --- !u!1 &2033279147
 GameObject:
   m_ObjectHideFlags: 0
