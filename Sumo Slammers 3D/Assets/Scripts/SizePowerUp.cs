@@ -21,7 +21,7 @@ public class SizePowerUp : MonoBehaviour
     {
         //Instantiate(pickupEffect, transform.position, transform.rotation);
         player.transform.localScale *= sizeMultiplier;
-        Movement.speed = 175f;
+        Movement.speed = 200f;
 
         GetComponent<MeshRenderer>().enabled = false;
         GetComponent<Collider>().enabled = false;
@@ -29,7 +29,7 @@ public class SizePowerUp : MonoBehaviour
         yield return new WaitForSeconds(duration);
 
         player.transform.localScale /= sizeMultiplier;
-        Movement.speed = 200f;
+        Movement.speed = 225f;
 
         Destroy(gameObject);
     }
