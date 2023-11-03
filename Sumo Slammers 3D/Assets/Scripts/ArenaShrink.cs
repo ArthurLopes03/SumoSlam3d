@@ -10,6 +10,7 @@ public class ArenaShrink : MonoBehaviour
 {
     public float shrinkSpeed = 0.1f;
     public TMP_Text text;
+    public GameObject PowerUp;
 
     void Update()
     {
@@ -20,5 +21,6 @@ public class ArenaShrink : MonoBehaviour
     {
         yield return new WaitForSeconds(20);
         this.transform.localScale = Vector3.Lerp(this.transform.localScale, new Vector3(-50, -50, 0), Time.deltaTime * shrinkSpeed);
+        PowerUp.SetActive(true);
     }
 }

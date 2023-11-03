@@ -5,7 +5,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     //Speed, input checking and Animtions
-    public static float speed = 100f;
+    public static float speed = 225f;
     [SerializeField] private string inputNameHorizontal;
     [SerializeField] private string inputNameVertical;
     [SerializeField] private string slapName;
@@ -43,7 +43,16 @@ public class Movement : MonoBehaviour
         }
 
 
-        rb.AddForce(-inputHorizontal * speed * Time.fixedDeltaTime, rb.velocity.y, -inputVertical * speed * Time.fixedDeltaTime);
+        rb.AddForce(-inputHorizontal * speed * Time.fixedDeltaTime, 0, -inputVertical * speed * Time.fixedDeltaTime);
+
+        /*if (Input.GetAxis(inputHorizontal))
+            rb.AddForce(new Vector3(-speed, 0, 0));
+        else if (Input.GetAxis(inputHorizontal))
+            rb.AddForce(new Vector3(speed, 0, 0));
+        else if (Input.GetAxis(inputVertical))
+            rb.AddForce(new Vector3(0, 0, speed));
+        else if (Input.GetAxis(V))
+            rb.AddForce(new Vector3(0, 0, -speed));*/
 
 
         // Idle and Walking Animations

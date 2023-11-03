@@ -8,23 +8,9 @@ public class SizePowerUp : MonoBehaviour
     public float duration = 10f;
     //public GameObject pickupEffect;
 
-    void start()
-    {
-        Debug.Log("PowerUp Script Start");
-        GetComponent<MeshRenderer>().enabled = false;
-        GetComponent<Collider>().enabled = false;
-
-        Invoke("Spawn",5);
-    }
-
-    void Spawn()
-    {
-        GetComponent<MeshRenderer>().enabled = true;
-        GetComponent<Collider>().enabled = true;
-    }
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player1") || other.CompareTag("Player2"))
         {
             StartCoroutine (Pickup(other));
         }
@@ -34,9 +20,8 @@ public class SizePowerUp : MonoBehaviour
     IEnumerator Pickup(Collider player)
     {
         //Instantiate(pickupEffect, transform.position, transform.rotation);
-
         player.transform.localScale *= sizeMultiplier;
-        Movement.speed = 125f;
+        Movement.speed = 175f;
 
         GetComponent<MeshRenderer>().enabled = false;
         GetComponent<Collider>().enabled = false;
