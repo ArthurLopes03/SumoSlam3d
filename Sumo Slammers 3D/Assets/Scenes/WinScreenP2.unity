@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 117458068}
   - component: {fileID: 117458067}
   - component: {fileID: 117458066}
-  - component: {fileID: 117458065}
+  - component: {fileID: 117458069}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -163,18 +163,6 @@ RectTransform:
   m_AnchoredPosition: {x: 1.2969, y: 60.2883}
   m_SizeDelta: {x: 162.5938, y: 80.5767}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &117458065
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 117458063}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf5a0433019b4454e9fcde618a61112f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &117458066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,9 +207,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 117458065}
-        m_TargetAssemblyTypeName: ResetGame, Assembly-CSharp
-        m_MethodName: loadGame
+      - m_Target: {fileID: 117458069}
+        m_TargetAssemblyTypeName: ButtonSceneChange, Assembly-CSharp
+        m_MethodName: loadScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -269,6 +257,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 117458063}
   m_CullTransparentMesh: 1
+--- !u!114 &117458069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 117458063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6693f616a65161478fa43846a1cb5d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Scene: Main Menu
 --- !u!1 &224730692
 GameObject:
   m_ObjectHideFlags: 0
@@ -888,7 +889,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 117458063}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &2112752002
