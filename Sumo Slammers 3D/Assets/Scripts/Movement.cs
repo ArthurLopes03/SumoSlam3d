@@ -5,7 +5,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     //Speed, input checking and Animtions
-    public static float speed = 250f;
+    public static float speed = 100f;
     [SerializeField] private string inputNameHorizontal;
     [SerializeField] private string inputNameVertical;
     [SerializeField] private string slapName;
